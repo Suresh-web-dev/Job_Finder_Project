@@ -1,0 +1,90 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: whitesmoke;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.main_form{
+    width: 450px;
+    height: 620px;
+    padding: 20px;
+    background-color: #f54792;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px black;
+
+}
+
+.head{
+    text-align: center;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 25px;
+    color: white;
+    
+}
+
+.main_form input{
+    width: 400px;
+    padding: 12px;
+    margin: 10px;
+    margin-left: 5px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 35px;
+    box-shadow: 3px 3px 5px black;
+}
+
+.main_form input::placeholder{
+    font-size: 17px;
+    color: gray;
+}
+
+.main_form label{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    padding: 10px;
+    margin-right: 30px;
+    color: white;
+
+}
+
+.main_form .button{
+    width: 200px;
+    margin-left: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px black;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.main_form p{
+    position: relative;
+    left: 2px;
+    font-size: 20px;
+    color: red;
+    padding: 10px;
+    width: fit-content;
+}
+
+.main_form span a{
+    font-size: 20px;
+}
+
+
+.main_form span{
+    font-size: 20px;
+    position: relative;
+    left: 75px;
+}

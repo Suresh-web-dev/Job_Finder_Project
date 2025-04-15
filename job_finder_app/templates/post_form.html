@@ -1,0 +1,32 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Finder</title>
+    <link rel="stylesheet" href="{% static 'post_form.css' %}">
+</head>
+<body>
+    <div class="form">
+        <form action="/post_form/" method="POST" class="main_form">
+            <h1 class="head">POST YOUR JOBS</h1>
+
+            
+            {% csrf_token %}
+            <label >JOB NAME</label>
+            <input type="text" name="job_name" placeholder="Enter The Job Name">
+            <label >DESCRIPTION</label>
+            <textarea type="text" name="job_description" placeholder="Enter The Description" id="text"></textarea>
+            <label >QUALIFICATIONS</label>
+            <input type="text" name="qualification" placeholder="Enter The qualification">
+            <label >SKILLS REQUIRED</label>
+            <input type="text" name="skills" placeholder="Enter The Skills">
+            <label >SALARY</label>
+            <input type="text" name="salary" placeholder="Enter The Salary">
+            <input type="submit" class="button">
+        </form>
+    </div>
+</body>
+</html>

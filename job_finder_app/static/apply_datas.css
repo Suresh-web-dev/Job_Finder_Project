@@ -1,0 +1,41 @@
+h1{
+    color: #f54792;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+    text-align: center;
+}
+th {
+    background-color: #f54792;
+}
+
+.delete_button{
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #f54792;
+    color: black;
+}
+
+
+.view_button{
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #f54792;
+    color: black;
+}
+

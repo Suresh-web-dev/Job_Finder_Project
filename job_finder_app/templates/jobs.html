@@ -1,0 +1,56 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Finder</title>
+    <link rel="stylesheet" href="{% static 'jobs_page.css' %}">
+   
+</head>
+<body>
+
+    
+    <header class="header">
+        <h1 class="logo">JobFinder</h1>
+        <nav>
+          <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="jobs">Jobs</a></li>
+            <li><a href="admin_page">Admin</a></li>
+          </ul>
+        </nav>
+
+    </header>
+
+
+    <form action="search" method="POST" class="search_form">
+
+        {% csrf_token %}
+        <input type="text" name="job_name" placeholder="Search" id="search_input">
+        <input type="submit" value="Search" id="search_button">
+    </form>
+
+
+    {% for i in all %}
+    <div class="container">
+        <div class="items">
+            <h1>{{i.job_name}}</h1>
+            <p>DESCRIPTION : {{i.job_description}}</p>
+            <h3>QUALIFICATIONS : {{i.qualification}}</h3>
+            <h3>SKILLS REQUIRED : {{i.skills}}</h3>
+            <h3>SALARY : {{i.salary}}</h3>
+            <a href="/one/{{i.id}}"><button>Apply</button></a>
+           
+        </div>
+    </div>
+    {% endfor %}
+    
+
+
+ 
+       
+</body>
+</html>
+

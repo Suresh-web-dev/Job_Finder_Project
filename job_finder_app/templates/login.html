@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Finder-Login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+
+    <div class="form">
+    <form action="/login_view/" method="POST" class="main_form">
+
+        <h1 class="head">Login</h1>
+
+        {% csrf_token %}
+
+        
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
+
+        <label>USERNAME</label>
+        <input type="text" name="username" placeholder="enter the username">
+
+        <label>PASSWORD</label>
+        <input type="password" name="password" placeholder="enter the password">
+        <input type="submit" value="Login" class="button"><br>
+
+        <span>Create an account <a href="/signup/"> signup</a></span>
+    </form>
+</div>
+
+   
+    
+</body>
+</html>

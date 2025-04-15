@@ -1,0 +1,95 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Finder</title>
+    <link rel="stylesheet" href="{% static 'apply__form.css' %}">
+</head>
+<body>
+
+    <h3>Your Applyed For {{a.job_name}}</h3>
+
+    <div class="form">
+        <form action="/apply_form"  method="POST" enctype="multipart/form-data" class="main_form" id="main_form">
+            <h1 class="head">APPLY YOUR JOB</h1>
+
+            {% csrf_token %}
+
+            <label>APPLIED JOB</label>
+            <input type="text" name="applied_job" value="{{a.job_name}}">
+        
+            <label>NAME</label>
+            <input type="text" name="name" placeholder="Enter The Your Name" id="name" value="{{user.username}}">
+            <span id="name_error"></span><br>
+      
+            <label>EMAIL</label>
+            <input type="text" name="email" placeholder="Enter The Email" id="email">
+            <span id="email_error"></span><br>
+        
+            <label>PHON NUMBER</label>
+            <input type="number" name="phon_number" placeholder="Enter The Phon Number" id="phon_number">
+            <span id="phon_error"></span><br>
+    
+            <label>UPLOAD RESUME</label>
+            <input type="file" name="file" required>
+
+            <input type="submit" class="button">
+        </form>
+    </div>
+
+
+    <script>
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    form = document.getElementById("main_form");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        name = document.getElementById("name").value.trim();
+        email = document.getElementById("email").value.trim();
+        phon_number = document.getElementById("phon_number").value.trim();
+
+        name_err = document.getElementById("name_error");
+        email_err = document.getElementById("email_error");
+        phon_err = document.getElementById("phon_error");
+
+       
+        name_err.textContent = "";
+        email_err.textContent = "";
+        phon_err.textContent = "";
+
+        Valid = true;
+
+       
+        if (name === "" || /\d/.test(name)) {
+            name_err.textContent = "Please enter your name properly.";
+            Valid = false;
+        }
+
+       
+        if (email === "" || !email.includes("@") || !email.includes(".")) {
+            email_err.textContent = "Please enter a valid email address.";
+            Valid = false;
+        }
+
+        if (phon_number === "" || phon_number.length !== 10 || isNaN(phon_number)) {
+            phon_err.textContent = "Phone number must be exactly 10 digits.";
+            Valid = false;
+        }
+
+        if (Valid) {
+            alert("Applied successfully!");
+            form.submit();
+        }
+    });
+});
+
+
+    </script>
+</body>
+</html>

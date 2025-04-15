@@ -1,0 +1,129 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f54792;
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f54792;
+
+}
+
+.header h1{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    cursor: pointer;
+    padding-left: 30px;
+}
+
+.header ul{
+    display: flex;
+    padding: 10px;
+    list-style-type: none;
+    margin-left: 500px;
+}
+
+li{
+    padding: 0px 100px 0px 0px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+
+.contain{
+    display: flex;
+}
+
+
+.one{
+    width: 50%;
+    position: relative;
+}
+
+.one .img{
+    position: relative;
+    left: 150px;
+    top: 150px;
+}
+
+.one a button{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: 170px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 5px 5px 10px black;
+    position: absolute;
+    right: 250px;
+    bottom: -200px;
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.two{
+    width: 40%;
+    position: relative;
+}
+
+
+.two .img{
+    position: relative;
+    left: 100px;
+    top: 150px;
+}
+
+
+.two a button{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: 170px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 5px 5px 10px black;
+    position: absolute;
+    right: 200px;
+    bottom: -200px;
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}

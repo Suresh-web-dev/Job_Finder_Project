@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Finder</title>
+    <link rel="stylesheet" href="{% static 'apply_datas.css' %}">
+    
+</head>
+<body>
+    <h1>Job Applicants</h1>
+    <table>
+        <tr>
+            <th>Applied Job</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Resume</th>
+            <th>Delete</th>
+        </tr>
+        {% for i in all %}
+        <tr>
+            <td>{{i.applied_job}}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.phon_number }}</td>
+            <td><a href="{{ i.file.url }}"><button class="view_button">view</button></a></td>
+            <td><a href="/delete/{{i.id}}"><button class="delete_button">Delete</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
